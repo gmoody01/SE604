@@ -1,17 +1,16 @@
 import csv
 import math
 
-with open('DJIA.csv', 'r') as DJIA_file:
-#    DJIA_reader = csv.reader(DJIA_file)
-    DJIA_reader = csv.DictReader(DJIA_file)
+with open('DJIA.csv', 'r') as cvs_file:
+   cvs_reader = csv.reader(cvs_file)
 
-    column = 
-    sqrts = [math.sqrt(x) for x in column]
-    print(sqrts)
+   for line in cvs_reader:
+        print(line)
 
- #   with open('DJIA_data.csv', 'w') as newDJIA_file:
-  #      fieldnames = ['DATE', 'DJIA Value']
 
-   #     for line in DJIA_reader:
-    #        print(line)
+#    column =
+#    sqrts = [math.sqrt(x) for x in column]
+#    print(sqrts)
 
+#with open('DJIA_data.csv', 'w') as newDJIA_file:
+#      fieldnames = ['DATE', 'DJIA Value']
