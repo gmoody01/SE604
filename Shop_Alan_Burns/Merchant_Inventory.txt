@@ -1,0 +1,4 @@
+Sword
+Axe
+Potion
+Arrows
