@@ -1,24 +1,42 @@
 '''
 
+------------------------------------------------------------------------------------------------------------------------
+           /\                                                                                               /\
+ _         )( ________________________________________            ________________________________________  )(         _
+(_)///////(**)________________________________________>          <________________________________________(**)\\\\\\\(_)
+           )(                                                                                              )(
+           \/                                                                                              \/
+
+
+                           SSSSSSSSSSSSSSS hhhhhhh
+                         SS:::::::::::::::Sh:::::h
+                        S:::::SSSSSS::::::Sh:::::h
+                        S:::::S     SSSSSSSh:::::h
+                        S:::::S             h::::h hhhhh          ooooooooooo   ppppp   ppppppppp
+                        S:::::S             h::::hh:::::hhh     oo:::::::::::oo p::::ppp:::::::::p
+                         S::::SSSS          h::::::::::::::hh  o:::::::::::::::op:::::::::::::::::p
+                          SS::::::SSSSS     h:::::::hhh::::::h o:::::ooooo:::::opp::::::ppppp::::::p
+                            SSS::::::::SS   h::::::h   h::::::ho::::o     o::::o p:::::p     p:::::p
+                               SSSSSS::::S  h:::::h     h:::::ho::::o     o::::o p:::::p     p:::::p
+                                    S:::::S h:::::h     h:::::ho::::o     o::::o p:::::p     p:::::p
+                                    S:::::S h:::::h     h:::::ho::::o     o::::o p:::::p    p::::::p
+                        SSSSSSS     S:::::S h:::::h     h:::::ho:::::ooooo:::::o p:::::ppppp:::::::p
+                        S::::::SSSSSS:::::S h:::::h     h:::::ho:::::::::::::::o p::::::::::::::::p
+                        S:::::::::::::::SS  h:::::h     h:::::h oo:::::::::::oo  p::::::::::::::pp
+                         SSSSSSSSSSSSSSS    hhhhhhh     hhhhhhh   ooooooooooo    p::::::pppppppp
+                                                                                 p:::::p
+                                                                                 p:::::p
+                                                                                p:::::::p
+                                                                                p:::::::p
+                                                                                p:::::::p
+                                                                                ppppppppp
 
            /\                                                                                               /\
  _         )( ________________________________________            ________________________________________  )(         _
 (_)///////(**)________________________________________>          <________________________________________(**)\\\\\\\(_)
            )(                                                                                              )(
            \/                                                                                              \/
-                                         ::::::::  :::    :::  ::::::::  :::::::::
-                                        :+:    :+: :+:    :+: :+:    :+: :+:    :+:
-                                        +:+        +:+    +:+ +:+    +:+ +:+    +:+
-                                        +#++:++#++ +#++:++#++ +#+    +:+ +#++:++#+
-                                               +#+ +#+    +#+ +#+    +#+ +#+
-                                        #+#    #+# #+#    #+# #+#    #+# #+#
-                                         ########  ###    ###  ########  ###
-
-           /\                                                                                               /\
- _         )( ________________________________________            ________________________________________  )(         _
-(_)///////(**)________________________________________>          <________________________________________(**)\\\\\\\(_)
-           )(                                                                                              )(
-           \/                                                                                              \/
+------------------------------------------------------------------------------------------------------------------------
 
 
 CONTRIBUTORS
@@ -68,6 +86,7 @@ NOTE
 
 import random
 import csv
+import pandas as pd
 
 
 # -------------------------------------------------------------------------------------------------------------------- #
@@ -85,12 +104,15 @@ luck_response = input("Are you carrying a luck stone? \n")
 if luck_response == "yes":
     print("\nGreat! That means you get a free item from my shop!")
     roll = random.randint(0, 9)  # Generates random integer
+
     read_his_stuff = open("Merchant_Inventory.txt", "r")
     add_your_stuff = open("Merchant_inventory.txt", "a")
+
     print("Today you get................. a " + read_his_stuff.readlines()[roll]) # Declare item to be given
     #add_your_stuff.write(read_his_stuff.readlines()[roll])  # Add item to user inventory (broken)
     read_his_stuff.close()
     add_your_stuff.close()
+
 else:
     print("Ah, unfortunate.")
 
@@ -332,5 +354,45 @@ while not buy_or_sell:
 
 
 # ---------------------------------------------------------------------------------------------------------------------#
-#                                                        END                                                           #
+#                                                         END                                                          #
 # ---------------------------------------------------------------------------------------------------------------------#
+'''
+
+                                               |\                     /)
+                                             /\_\\__               (_//
+                                            |   `>\-`     _._       //`)
+                                             \ /` \\  _.-`:::`-._  //
+                                              `    \|`    :::    `|/
+                                                    |     :::     |
+                                                    |.....:::.....|
+                                                    |:::::::::::::|
+                                                    |     :::     |
+                                                    \     :::     /
+                                                     \    :::    /
+                                                      `-. ::: .-'
+                                                       //`:::`\\
+                                                      //   '   \\
+                                                     |/         \\'''
+
+
+
+
+'''
+Other Codes I mess with:
+
+Attempts at reading a .csv
+with open("Merchant_Inventory.csv") as read_his_stuff:
+    csv_reader = csv.reader(read_his_stuff, delimiter=",")
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            line_count += 1
+        else:
+            print(f"\t{row[0]}  {row[1]} ")
+            line_count += 1
+
+Attempts at writing to a .csv
+with open("Merchant_Inventory.csv", mode = "w") as add_his_stuff:
+    csv_writer = csv.writer(add_his_stuff, delimiter = ",")
+    csv_writer.writerow(["Sword", "20"])
+'''
